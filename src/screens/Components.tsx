@@ -1,17 +1,17 @@
-import React, {useLayoutEffect, useState} from 'react';
-import {FlatList, TouchableOpacity} from 'react-native';
+import React, { useLayoutEffect, useState } from 'react';
+import { FlatList, TouchableOpacity } from 'react-native';
 
-import {useNavigation} from '@react-navigation/core';
-import {useHeaderHeight} from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/core';
+import { useHeaderHeight } from '@react-navigation/stack';
 
-import {useTheme} from '../hooks/';
-import {Block, Button, Input, Image, Switch, Modal, Text} from '../components/';
+import { useTheme } from '../hooks/';
+import { Block, Button, Input, Image, Switch, Modal, Text } from '../components/';
 
 // buttons example
 const Buttons = () => {
   const [showModal, setModal] = useState(false);
   const [quantity, setQuantity] = useState('01');
-  const {assets, colors, gradients, sizes} = useTheme();
+  const { assets, colors, gradients, sizes } = useTheme();
 
   return (
     <Block paddingHorizontal={sizes.padding}>
@@ -24,10 +24,7 @@ const Buttons = () => {
             Primary
           </Text>
         </Button>
-        <Button
-          flex={1}
-          gradient={gradients.secondary}
-          marginBottom={sizes.base}>
+        <Button flex={1} gradient={gradients.secondary} marginBottom={sizes.base}>
           <Text white bold transform="uppercase">
             Secondary
           </Text>
@@ -63,23 +60,20 @@ const Buttons = () => {
           </Text>
         </Button>
         <Block row justify="space-between" marginBottom={sizes.base}>
-          <Button
-            flex={1}
-            row
-            gradient={gradients.dark}
-            onPress={() => setModal(true)}>
+          <Button flex={1} row gradient={gradients.dark} onPress={() => setModal(true)}>
             <Block
               row
               align="center"
               justify="space-between"
-              paddingHorizontal={sizes.sm}>
+              paddingHorizontal={sizes.sm}
+            >
               <Text white bold transform="uppercase" marginRight={sizes.sm}>
                 {quantity}
               </Text>
               <Image
                 source={assets.arrow}
                 color={colors.white}
-                transform={[{rotate: '90deg'}]}
+                transform={[{ rotate: '90deg' }]}
               />
             </Block>
           </Button>
@@ -99,13 +93,14 @@ const Buttons = () => {
         <FlatList
           keyExtractor={(index) => `${index}`}
           data={['01', '02', '03', '04', '05']}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <Button
               marginBottom={sizes.sm}
               onPress={() => {
                 setQuantity(item);
                 setModal(false);
-              }}>
+              }}
+            >
               <Text p white semibold transform="uppercase">
                 {item}
               </Text>
@@ -119,7 +114,7 @@ const Buttons = () => {
 
 // texts example
 const Typography = () => {
-  const {sizes} = useTheme();
+  const { sizes } = useTheme();
 
   return (
     <Block marginTop={sizes.m} paddingHorizontal={sizes.padding}>
@@ -141,14 +136,15 @@ const Typography = () => {
 
 // inputs example
 const Inputs = () => {
-  const {colors, sizes} = useTheme();
+  const { colors, sizes } = useTheme();
 
   return (
     <Block
       color={colors.card}
       marginTop={sizes.m}
       paddingTop={sizes.m}
-      paddingHorizontal={sizes.padding}>
+      paddingHorizontal={sizes.padding}
+    >
       <Text p semibold marginBottom={sizes.s}>
         Inputs
       </Text>
@@ -171,7 +167,7 @@ const Inputs = () => {
 
 // switch example
 const Switches = () => {
-  const {colors, sizes} = useTheme();
+  const { colors, sizes } = useTheme();
   const [switch1, setSwitch1] = useState(true);
   const [switch2, setSwitch2] = useState(false);
 
@@ -179,29 +175,19 @@ const Switches = () => {
     <Block
       color={colors.card}
       paddingVertical={sizes.m}
-      paddingHorizontal={sizes.padding}>
+      paddingHorizontal={sizes.padding}
+    >
       <Text p semibold marginBottom={sizes.s}>
         Switches
       </Text>
       <Block>
         <Block row flex={0} align="center" justify="space-between">
           <Text>Switch is {switch1 ? 'ON' : 'OFF'}</Text>
-          <Switch
-            checked={switch1}
-            onPress={(checked) => setSwitch1(checked)}
-          />
+          <Switch checked={switch1} onPress={(checked) => setSwitch1(checked)} />
         </Block>
-        <Block
-          row
-          flex={0}
-          align="center"
-          justify="space-between"
-          marginTop={sizes.s}>
+        <Block row flex={0} align="center" justify="space-between" marginTop={sizes.s}>
           <Text>Switch is {switch2 ? 'ON' : 'OFF'}</Text>
-          <Switch
-            checked={switch2}
-            onPress={(checked) => setSwitch2(checked)}
-          />
+          <Switch checked={switch2} onPress={(checked) => setSwitch2(checked)} />
         </Block>
       </Block>
     </Block>
@@ -210,7 +196,7 @@ const Switches = () => {
 
 // social example
 const Social = () => {
-  const {sizes} = useTheme();
+  const { sizes } = useTheme();
 
   return (
     <Block paddingVertical={sizes.m} paddingHorizontal={sizes.padding}>
@@ -228,7 +214,7 @@ const Social = () => {
 
 // cards example
 const Cards = () => {
-  const {assets, colors, gradients, sizes} = useTheme();
+  const { assets, colors, gradients, sizes } = useTheme();
 
   return (
     <Block marginTop={sizes.m} paddingHorizontal={sizes.padding}>
@@ -238,11 +224,7 @@ const Cards = () => {
       {/* single card */}
       <Block>
         <Block card row>
-          <Image
-            resizeMode="contain"
-            source={assets?.card1}
-            style={{height: 114}}
-          />
+          <Image resizeMode="contain" source={assets?.card1} style={{ height: 114 }} />
           <Block padding={sizes.s} justify="space-between">
             <Text p>Adventures - Multi day trips with meals and stays.</Text>
             <TouchableOpacity>
@@ -259,11 +241,7 @@ const Cards = () => {
       {/* inline cards */}
       <Block row marginTop={sizes.sm}>
         <Block card marginRight={sizes.sm}>
-          <Image
-            resizeMode="cover"
-            source={assets?.card2}
-            style={{width: '100%'}}
-          />
+          <Image resizeMode="cover" source={assets?.card2} style={{ width: '100%' }} />
           <Block padding={sizes.s} justify="space-between">
             <Text p marginBottom={sizes.s}>
               New ways to meet your business goals.
@@ -279,11 +257,7 @@ const Cards = () => {
           </Block>
         </Block>
         <Block card>
-          <Image
-            resizeMode="cover"
-            source={assets?.card3}
-            style={{width: '100%'}}
-          />
+          <Image resizeMode="cover" source={assets?.card3} style={{ width: '100%' }} />
           <Block padding={sizes.s} justify="space-between">
             <Text p marginBottom={sizes.s}>
               The highest status people.
@@ -301,31 +275,24 @@ const Cards = () => {
       </Block>
       {/* full image width card */}
       <Block card marginTop={sizes.sm}>
-        <Image
-          resizeMode="cover"
-          source={assets?.card4}
-          style={{width: '100%'}}
-        />
+        <Image resizeMode="cover" source={assets?.card4} style={{ width: '100%' }} />
         <Text
           h5
           bold
           transform="uppercase"
           gradient={gradients.primary}
-          marginTop={sizes.sm}>
+          marginTop={sizes.sm}
+        >
           Trending
         </Text>
-        <Text
-          p
-          marginTop={sizes.s}
-          marginLeft={sizes.xs}
-          marginBottom={sizes.sm}>
+        <Text p marginTop={sizes.s} marginLeft={sizes.xs} marginBottom={sizes.sm}>
           The most beautiful and complex UI Kits built by Creative Tim.
         </Text>
         {/* user details */}
         <Block row marginLeft={sizes.xs} marginBottom={sizes.xs}>
           <Image
             source={assets.avatar1}
-            style={{width: sizes.xl, height: sizes.xl, borderRadius: sizes.s}}
+            style={{ width: sizes.xl, height: sizes.xl, borderRadius: sizes.s }}
           />
           <Block marginLeft={sizes.s}>
             <Text p semibold>
@@ -343,14 +310,15 @@ const Cards = () => {
           background
           resizeMode="cover"
           source={assets.card5}
-          radius={sizes.cardRadius}>
+          radius={sizes.cardRadius}
+        >
           <Block color="rgba(0,0,0,0.3)" padding={sizes.padding}>
             <Text h4 white marginBottom={sizes.sm}>
               Flexible office space means growth.
             </Text>
             <Text p white>
-              Rather than worrying about switching offices every couple years,
-              you can instead stay in the same location.
+              Rather than worrying about switching offices every couple years, you can
+              instead stay in the same location.
             </Text>
             {/* user details */}
             <Block row marginLeft={sizes.xs} marginTop={sizes.xxl}>
@@ -380,13 +348,11 @@ const Cards = () => {
 
 // Photo gallery example
 const Gallery = () => {
-  const {assets, sizes} = useTheme();
+  const { assets, sizes } = useTheme();
   const IMAGE_SIZE = (sizes.width - (sizes.padding + sizes.sm) * 2) / 3;
-  const IMAGE_VERTICAL_SIZE =
-    (sizes.width - (sizes.padding + sizes.sm) * 2) / 2;
+  const IMAGE_VERTICAL_SIZE = (sizes.width - (sizes.padding + sizes.sm) * 2) / 2;
   const IMAGE_MARGIN = (sizes.width - IMAGE_SIZE * 3 - sizes.padding * 2) / 2;
-  const IMAGE_VERTICAL_MARGIN =
-    (sizes.width - (IMAGE_VERTICAL_SIZE + sizes.sm) * 2) / 2;
+  const IMAGE_VERTICAL_MARGIN = (sizes.width - (IMAGE_VERTICAL_SIZE + sizes.sm) * 2) / 2;
 
   return (
     <Block marginTop={sizes.m} paddingHorizontal={sizes.padding}>
@@ -395,11 +361,7 @@ const Gallery = () => {
       </Text>
       {/* carousel example */}
       <Block marginBottom={sizes.xxl}>
-        <Image
-          resizeMode="cover"
-          source={assets.carousel1}
-          style={{width: '100%'}}
-        />
+        <Image resizeMode="cover" source={assets.carousel1} style={{ width: '100%' }} />
         <Text p secondary marginTop={sizes.sm}>
           Private Room • 1 Guests • 1 Sofa
         </Text>
@@ -407,8 +369,8 @@ const Gallery = () => {
           Single room in center
         </Text>
         <Text p lineHeight={26}>
-          As Uber works through a huge amount of internal management turmoil,
-          the company is also consolidating.
+          As Uber works through a huge amount of internal management turmoil, the company
+          is also consolidating.
         </Text>
       </Block>
       {/* photo gallery */}
@@ -528,7 +490,7 @@ const Gallery = () => {
 };
 
 const Components = () => {
-  const {assets, sizes} = useTheme();
+  const { assets, sizes } = useTheme();
   const navigation = useNavigation();
   const headerHeight = useHeaderHeight();
 
@@ -551,7 +513,8 @@ const Components = () => {
       <Block
         scroll
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingVertical: sizes.padding}}>
+        contentContainerStyle={{ paddingVertical: sizes.padding }}
+      >
         <Block>
           <Buttons />
           <Typography />

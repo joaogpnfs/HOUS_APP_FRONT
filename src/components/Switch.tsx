@@ -1,14 +1,8 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {
-  Animated,
-  Pressable,
-  Platform,
-  ViewStyle,
-  StyleSheet,
-} from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Animated, Pressable, Platform, ViewStyle, StyleSheet } from 'react-native';
 import * as Haptics from 'expo-haptics';
 
-import {ISwitchProps} from '../constants/types';
+import { ISwitchProps } from '../constants/types';
 import useTheme from '../hooks/useTheme';
 
 const Switch = ({
@@ -26,7 +20,7 @@ const Switch = ({
   ...props
 }: ISwitchProps) => {
   const [isChecked, setChecked] = useState(checked);
-  const {colors, sizes} = useTheme();
+  const { colors, sizes } = useTheme();
   const activeColor = activeFillColor || colors.switchOn;
   const inactiveColor = inactiveFillColor || colors.switchOff;
 
@@ -87,7 +81,7 @@ const Switch = ({
       shadowRadius: sizes.shadowRadius,
       elevation: sizes.elevation,
       borderRadius: sizes.switchThumb / 2,
-      transform: [{translateX: animation}],
+      transform: [{ translateX: animation }],
     },
   ]) as ViewStyle;
 
@@ -103,7 +97,7 @@ const Switch = ({
 
   // generate component testID or accessibilityLabel based on Platform.OS
   const switchID =
-    Platform.OS === 'android' ? {accessibilityLabel: id} : {testID: id};
+    Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
 
   return (
     <Pressable
@@ -111,7 +105,8 @@ const Switch = ({
       hitSlop={sizes.s}
       onPress={handleToggle}
       style={containerStyles}
-      {...props}>
+      {...props}
+    >
       <Animated.View style={switchStyles}>
         <Animated.View style={thumbStyles} />
       </Animated.View>

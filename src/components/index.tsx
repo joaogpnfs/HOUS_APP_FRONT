@@ -9,15 +9,4 @@ import Image from './Image';
 import Article from './Article';
 import Product from './Product';
 
-export {
-  Block,
-  Button,
-  Input,
-  Text,
-  Switch,
-  Checkbox,
-  Image,
-  Article,
-  Product,
-  Modal,
-};
+export { Block, Button, Input, Text, Switch, Checkbox, Image, Article, Product, Modal };

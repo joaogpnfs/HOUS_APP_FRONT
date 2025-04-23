@@ -6,7 +6,7 @@ import {
   ImageBackground,
   Platform,
 } from 'react-native';
-import {IImageProps} from '../constants/types';
+import { IImageProps } from '../constants/types';
 
 import useTheme from '../hooks/useTheme';
 
@@ -39,32 +39,32 @@ const Image = ({
   marginBottom,
   ...props
 }: IImageProps) => {
-  const {colors, sizes} = useTheme();
+  const { colors, sizes } = useTheme();
 
   const imageStyles = StyleSheet.flatten([
     style,
     {
       borderRadius: sizes.imageRadius,
-      ...(height && {height}),
-      ...(width && {width}),
-      ...(margin && {margin}),
-      ...(marginBottom && {marginBottom}),
-      ...(marginTop && {marginTop}),
-      ...(marginHorizontal && {marginHorizontal}),
-      ...(marginVertical && {marginVertical}),
-      ...(marginRight && {marginRight}),
-      ...(marginLeft && {marginLeft}),
-      ...(padding && {padding}),
-      ...(paddingBottom && {paddingBottom}),
-      ...(paddingTop && {paddingTop}),
-      ...(paddingHorizontal && {paddingHorizontal}),
-      ...(paddingVertical && {paddingVertical}),
-      ...(paddingRight && {paddingRight}),
-      ...(paddingLeft && {paddingLeft}),
-      ...(rounded && {borderRadius: sizes.radius, overflow: 'hidden'}),
-      ...(radius !== undefined && {borderRadius: radius, overflow: 'hidden'}),
-      ...(color && {tintColor: color}),
-      ...(transform && {transform}),
+      ...(height && { height }),
+      ...(width && { width }),
+      ...(margin && { margin }),
+      ...(marginBottom && { marginBottom }),
+      ...(marginTop && { marginTop }),
+      ...(marginHorizontal && { marginHorizontal }),
+      ...(marginVertical && { marginVertical }),
+      ...(marginRight && { marginRight }),
+      ...(marginLeft && { marginLeft }),
+      ...(padding && { padding }),
+      ...(paddingBottom && { paddingBottom }),
+      ...(paddingTop && { paddingTop }),
+      ...(paddingHorizontal && { paddingHorizontal }),
+      ...(paddingVertical && { paddingVertical }),
+      ...(paddingRight && { paddingRight }),
+      ...(paddingLeft && { paddingLeft }),
+      ...(rounded && { borderRadius: sizes.radius, overflow: 'hidden' }),
+      ...(radius !== undefined && { borderRadius: radius, overflow: 'hidden' }),
+      ...(color && { tintColor: color }),
+      ...(transform && { transform }),
       ...(shadow && {
         shadowColor: colors.shadow,
         shadowOffset: {
@@ -84,8 +84,7 @@ const Image = ({
   ]) as ImageStyle;
 
   // generate component testID or accessibilityLabel based on Platform.OS
-  const imageID =
-    Platform.OS === 'android' ? {accessibilityLabel: id} : {testID: id};
+  const imageID = Platform.OS === 'android' ? { accessibilityLabel: id } : { testID: id };
 
   if (background) {
     return (
