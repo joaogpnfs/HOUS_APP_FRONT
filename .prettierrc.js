@@ -3,5 +3,5 @@ module.exports = {
   printWidth: 90,
   singleQuote: true,
   semi: true,
-  endOfLine: 'lf',
+  endOfLine: 'auto',
 };
