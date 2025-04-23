@@ -1,14 +1,14 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 
-import {useData, useTheme, useTranslation} from '../hooks/';
-import {Block, Button, Image, Input, Product, Text} from '../components/';
+import { useData, useTheme, useTranslation } from '../hooks/';
+import { Block, Button, Image, Input, Product, Text } from '../components/';
 
 const Home = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [tab, setTab] = useState<number>(0);
-  const {following, trending} = useData();
+  const { following, trending } = useData();
   const [products, setProducts] = useState(following);
-  const {assets, colors, fonts, gradients, sizes} = useTheme();
+  const { assets, colors, fonts, gradients, sizes } = useTheme();
 
   const handleProducts = useCallback(
     (tab: number) => {
@@ -32,7 +32,8 @@ const Home = () => {
         align="center"
         justify="center"
         color={colors.card}
-        paddingBottom={sizes.sm}>
+        paddingBottom={sizes.sm}
+      >
         <Button onPress={() => handleProducts(0)}>
           <Block row align="center">
             <Block
@@ -43,7 +44,8 @@ const Home = () => {
               marginRight={sizes.s}
               width={sizes.socialIconSize}
               height={sizes.socialIconSize}
-              gradient={gradients?.[tab === 0 ? 'primary' : 'secondary']}>
+              gradient={gradients?.[tab === 0 ? 'primary' : 'secondary']}
+            >
               <Image source={assets.extras} color={colors.white} radius={0} />
             </Block>
             <Text p font={fonts?.[tab === 0 ? 'medium' : 'normal']}>
@@ -68,12 +70,9 @@ const Home = () => {
               marginRight={sizes.s}
               width={sizes.socialIconSize}
               height={sizes.socialIconSize}
-              gradient={gradients?.[tab === 1 ? 'primary' : 'secondary']}>
-              <Image
-                radius={0}
-                color={colors.white}
-                source={assets.documentation}
-              />
+              gradient={gradients?.[tab === 1 ? 'primary' : 'secondary']}
+            >
+              <Image radius={0} color={colors.white} source={assets.documentation} />
             </Block>
             <Text p font={fonts?.[tab === 1 ? 'medium' : 'normal']}>
               {t('home.trending')}
@@ -87,7 +86,8 @@ const Home = () => {
         scroll
         paddingHorizontal={sizes.padding}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: sizes.l}}>
+        contentContainerStyle={{ paddingBottom: sizes.l }}
+      >
         <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
           {products?.map((product) => (
             <Product {...product} key={`card-${product?.id}`} />

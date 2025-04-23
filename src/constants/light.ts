@@ -1,12 +1,6 @@
-import {
-  ITheme,
-  ThemeColors,
-  ThemeGradients,
-  ThemeSizes,
-  ThemeSpacing,
-} from './types';
+import { ITheme, ThemeColors, ThemeGradients, ThemeSizes, ThemeSpacing } from './types';
 
-import {THEME as commonTheme} from './theme';
+import { THEME as commonTheme } from './theme';
 
 export const COLORS: ThemeColors = {
   // default text color
@@ -184,5 +178,5 @@ export const THEME: ITheme = {
   ...commonTheme,
   colors: COLORS,
   gradients: GRADIENTS,
-  sizes: {...SIZES, ...commonTheme.sizes, ...SPACING},
+  sizes: { ...SIZES, ...commonTheme.sizes, ...SPACING },
 };

@@ -17,8 +17,8 @@ export const USERS: IUser[] = [
     id: 1,
     name: 'Devin Coldewey',
     department: 'Marketing Manager',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -28,8 +28,8 @@ export const USERS: IUser[] = [
     id: 2,
     name: 'Bella Audrey',
     department: 'Marketing Manager',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -39,8 +39,8 @@ export const USERS: IUser[] = [
     id: 3,
     name: 'Miriam Lendra',
     department: 'Desktop Publisher',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -50,8 +50,8 @@ export const USERS: IUser[] = [
     id: 4,
     name: 'David Bishop',
     department: 'Marketing Manager',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -61,8 +61,8 @@ export const USERS: IUser[] = [
     id: 5,
     name: 'Mathew Glock',
     department: 'HR Manager',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -72,8 +72,8 @@ export const USERS: IUser[] = [
     id: 6,
     name: 'Emma Roberts',
     department: 'HR Manager',
-    stats: {posts: 323, followers: 53200, following: 749000},
-    social: {twitter: 'CreativeTim', dribbble: 'creativetim'},
+    stats: { posts: 323, followers: 53200, following: 749000 },
+    social: { twitter: 'CreativeTim', dribbble: 'creativetim' },
     about:
       'Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).',
     avatar:
@@ -168,10 +168,10 @@ export const TRENDING: IProduct[] = [
 
 // categories
 export const CATEGORIES: ICategory[] = [
-  {id: 1, name: 'Popular'},
-  {id: 2, name: 'Newest'},
-  {id: 3, name: 'Fashion'},
-  {id: 4, name: 'Best deal'},
+  { id: 1, name: 'Popular' },
+  { id: 2, name: 'Newest' },
+  { id: 3, name: 'Fashion' },
+  { id: 4, name: 'Best deal' },
 ];
 
 // article options
@@ -183,7 +183,7 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
       'As Uber works through a huge amount of internal management turmoil, the company is also consolidating.',
     type: 'room',
     guests: 1,
-    sleeping: {total: 1, type: 'sofa'},
+    sleeping: { total: 1, type: 'sofa' },
     price: 89,
     user: USERS[0],
     image:
@@ -196,7 +196,7 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
       'Different people have different taste, and various types of music have many ways of leaving an impact on someone.',
     type: 'apartment',
     guests: 3,
-    sleeping: {total: 2, type: 'bed'},
+    sleeping: { total: 2, type: 'bed' },
     price: 200,
     user: USERS[0],
     image:
@@ -209,7 +209,7 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
       'As Uber works through a huge amount of internal management turmoil, the company is also consolidating.',
     type: 'room',
     guests: 1,
-    sleeping: {total: 1, type: 'sofa'},
+    sleeping: { total: 1, type: 'sofa' },
     price: 89,
     user: USERS[0],
     image:
@@ -251,9 +251,9 @@ export const OFFERS: IProduct[] = [
 
 // rental locations
 export const LOCATIONS: ILocation[] = [
-  {id: 1, city: 'Paris', country: 'France'},
-  {id: 2, city: 'Rome', country: 'Italy'},
-  {id: 3, city: 'London', country: 'United Kingdom'},
+  { id: 1, city: 'Paris', country: 'France' },
+  { id: 2, city: 'Rome', country: 'Italy' },
+  { id: 3, city: 'London', country: 'United Kingdom' },
 ];
 
 // articles
@@ -379,8 +379,7 @@ export const ARTICLES: IArticle[] = [
   },
   {
     id: 11,
-    description:
-      'A great to stay in Paris without feeling you are in the city!',
+    description: 'A great to stay in Paris without feeling you are in the city!',
     category: CATEGORIES[3], // best deal
     options: ARTICLE_OPTIONS,
     image:
@@ -402,8 +401,7 @@ export const ARTICLES: IArticle[] = [
   },
   {
     id: 13,
-    description:
-      'The most beautiful and complex UI Kits built by Creative Tim.',
+    description: 'The most beautiful and complex UI Kits built by Creative Tim.',
     category: CATEGORIES[3], // best deal
     options: ARTICLE_OPTIONS,
     image:
@@ -418,8 +416,7 @@ export const ARTICLES: IArticle[] = [
 export const RECOMMENDATIONS: IArticle[] = [
   {
     id: 1,
-    description:
-      'A great to stay in Paris without feeling you are in the city!',
+    description: 'A great to stay in Paris without feeling you are in the city!',
     category: CATEGORIES[3], // best deal
     options: ARTICLE_OPTIONS,
     image:
@@ -443,8 +440,7 @@ export const RECOMMENDATIONS: IArticle[] = [
   },
   {
     id: 3,
-    description:
-      'The most beautiful and complex UI Kits built by Creative Tim.',
+    description: 'The most beautiful and complex UI Kits built by Creative Tim.',
     category: CATEGORIES[3], // best deal
     options: ARTICLE_OPTIONS,
     image:
